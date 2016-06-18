@@ -19,6 +19,14 @@ SET ( openddl_parser_src
 
 ADD_LIBRARY( openddl_parser "${openddl_parser_src}")
 
+if(NOT BUILD_SHARED_LIBS)
+  target_compile_definitions(openddl_parser PRIVATE OPENDDL_STATIC_LIBARY)
+endif()
+
+target_compile_definitions(
+    openddl_parser PRIVATE OPENDDLPARSER_BUILD _VARIADIC_MAX=10
+)
+
 include_directories(include)
 
 ## install
