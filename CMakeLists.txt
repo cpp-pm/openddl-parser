@@ -20,7 +20,7 @@ SET ( openddl_parser_src
 ADD_LIBRARY( openddl_parser "${openddl_parser_src}")
 
 if(NOT BUILD_SHARED_LIBS)
-  target_compile_definitions(openddl_parser PRIVATE OPENDDL_STATIC_LIBARY)
+  target_compile_definitions(openddl_parser PUBLIC OPENDDL_STATIC_LIBARY)
 endif()
 
 target_compile_definitions(
